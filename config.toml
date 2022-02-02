@@ -1,0 +1,28 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'Sam Edwards-Marsh'
+theme = 'hugo-coder'
+
+
+# Menu items
+[[menu.main]]
+    name = 'Projects'
+    weight = 1
+    url  = 'projects/'
+[[menu.main]]
+    name = 'About'
+    weight = 2
+    url = 'about/'
+
+
+# Social links
+[[params.social]]
+  name = "Github"
+  icon = "fa fa-github fa-2x"
+  weight = 1
+  url = "https://github.com/sedwardsmarsh"
+[[params.social]]
+  name = "Linkedin"
+  icon = "fa fa-linkedin fa-2x"
+  weight = 2
+  url = "https://www.linkedin.com/in/samuel-e-31b34a121/"
