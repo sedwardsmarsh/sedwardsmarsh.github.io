@@ -1,28 +1,32 @@
-baseURL = 'http://example.org/'
-languageCode = 'en-us'
-title = 'Sam Edwards-Marsh'
-theme = 'hugo-coder'
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Sam Edwards-Marsh"
+theme = "hugo-coder"
 
+# Theme parameters
+[params]
+    author = "Sam Edwards-Marsh"
+    info = "Computer Science B.S. Student at UCSC"
+    description = "Sam Edwards-Marsh's personal site"
 
 # Menu items
 [[menu.main]]
-    name = 'Projects'
+    name = "Projects"
     weight = 1
-    url  = 'projects/'
+    url  = "projects/"
 [[menu.main]]
-    name = 'About'
+    name = "About"
     weight = 2
-    url = 'about/'
-
+    url = "about/"
 
 # Social links
 [[params.social]]
-  name = "Github"
-  icon = "fa fa-github fa-2x"
-  weight = 1
-  url = "https://github.com/sedwardsmarsh"
+    name = "Github"
+    icon = "fa fa-github fa-2x"
+    weight = 1
+    url = "https://github.com/sedwardsmarsh"
 [[params.social]]
-  name = "Linkedin"
-  icon = "fa fa-linkedin fa-2x"
-  weight = 2
-  url = "https://www.linkedin.com/in/samuel-e-31b34a121/"
+    name = "Linkedin"
+    icon = "fa fa-linkedin fa-2x"
+    weight = 2
+    url = "https://www.linkedin.com/in/samuel-e-31b34a121/"
