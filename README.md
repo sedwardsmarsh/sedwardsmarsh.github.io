@@ -10,4 +10,5 @@
 ### Helpful Hugo resources:
 * [Hugo quickstart](https://gohugo.io/getting-started/quick-start/)
 * [Hosting Hugo on Github](https://gohugo.io/hosting-and-deployment/hosting-on-github/)
+* [Hugo coder theme configuration](https://github.com/luizdepra/hugo-coder/wiki/Configurations#complete-example)
 * [More information](https://gohugo.io/getting-started/directory-structure/) about the hugo directory structure
