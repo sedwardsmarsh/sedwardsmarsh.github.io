@@ -9,7 +9,7 @@ theme = "hugo-coder"
     info = "Computer Science B.S. Student at UCSC"
     description = "Sam Edwards-Marsh's personal site"
     keywords = "blog,developer,personal,project"
-    avatarURL = "images/avatar.jpeg"
+    avatarURL = "avatar.jpeg"
 
 # Menu items
 [[menu.main]]
