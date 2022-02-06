@@ -2,7 +2,9 @@
 * `config.toml`:
     * Implement theme CSP
     * figure out hugo "Front Matter"
-    * add favicons, touchIcon, hideColorSchemeToggle
+    * add favicons, touchIcon, 
+        * [use this](https://realfavicongenerator.net) to verify functionality
+    * hideColorSchemeToggle
 * ~~[figure out how to get site to display properly on github](https://gohugo.io/hosting-and-deployment/hosting-on-github/)~~
 * ~~[setup apex domain samedwardsmarsh.com](https://gohugo.io/hosting-and-deployment/hosting-on-github/#use-a-custom-domain) on github~~
 * add twitter?
@@ -32,5 +34,5 @@
         * your hostname should only be: *_github-pages-challenge-`<gh_username>`*
     3. Follow the remaining steps in the github tutorial
     * Thank [Derek Fong](https://derekfong.medium.com/verify-github-organizations-domain-on-namecheap-9b2af148679a) for clarifying this step
-* [Hugo coder theme configuration](https://github.com/luizdepra/hugo-coder/wiki/Configurations#complete-example)
+* [Hugo-coder theme configuration](https://github.com/luizdepra/hugo-coder/wiki/Configurations#complete-example)
 * [More information](https://gohugo.io/getting-started/directory-structure/) about the hugo directory structure
