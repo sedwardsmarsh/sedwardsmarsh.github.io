@@ -10,6 +10,9 @@ theme = "hugo-coder"
     description = "Sam Edwards-Marsh's personal site"
     keywords = "blog,developer,personal,project"
     avatarURL = "avatar.jpeg"
+    favicon_16 = "favicon-16x16.png"
+    favicon_32 = "favicon-32x32.png"
+    touchIcon = "apple-touch-icon.png"
 
 # Menu items
 [[menu.main]]
