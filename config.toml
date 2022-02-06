@@ -17,9 +17,9 @@ theme = "hugo-coder"
     weight = 1
     url  = "projects/"
 [[menu.main]]
-    name = "About"
+    name = "Resume"
     weight = 2
-    url = "about/"
+    url = "resume/"
 
 # Social links
 [[params.social]]
