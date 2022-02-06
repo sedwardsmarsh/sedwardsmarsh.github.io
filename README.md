@@ -8,3 +8,9 @@
 * setup samedwardsmarsh.com domain with github
     * https://gohugo.io/hosting-and-deployment/hosting-on-github/#use-a-custom-domain
 * add twitter?
+
+### Helpful Hugo resources:
+* Hosting Hugo on Github
+    * https://gohugo.io/hosting-and-deployment/hosting-on-github/
+* More information about the hugo directory structure
+    * https://gohugo.io/getting-started/directory-structure/
