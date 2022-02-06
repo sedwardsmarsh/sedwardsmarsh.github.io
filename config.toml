@@ -1,4 +1,4 @@
-baseURL = "http://sedwardsmarsh.github.io"
+baseURL = "https://samedwardsmarsh.com"
 languageCode = "en-us"
 title = "Sam Edwards-Marsh"
 theme = "hugo-coder"
