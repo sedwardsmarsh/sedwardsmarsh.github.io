@@ -21,5 +21,6 @@
         * your hostname should only be: *_github-pages-challenge-`<gh_username>`*
     3. Follow the remaining steps in the github tutorial
     * Thank [Derek Fong](https://derekfong.medium.com/verify-github-organizations-domain-on-namecheap-9b2af148679a) for clarifying this step
+* [Get SSL certification on Github pages](https://docs.github.com/en/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https)
 * [Hugo-coder theme configuration](https://github.com/luizdepra/hugo-coder/wiki/Configurations#complete-example)
 * [More information](https://gohugo.io/getting-started/directory-structure/) about the hugo directory structure
