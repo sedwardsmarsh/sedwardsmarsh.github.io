@@ -1,9 +1,0 @@
-# empty; written to root of file when building or '$ hugo new <...>'
-*.hugo_build.lock
-
-# pesky MacOS file
-.DS_Store
-
-# files that aren't needed for gh-pages
-public
-resources
