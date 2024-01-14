@@ -23,10 +23,13 @@ h2 {
 h1, 
 h2,
 strong {
-    /* bring attention to title text */
     color: #333;
 }
 
 footer {
     color: #999;
+}
+
+a {
+    color: #e8591c;
 }
