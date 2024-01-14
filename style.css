@@ -9,10 +9,24 @@ body {
     /* line spacing */
     line-height: 1.5;
     padding: 4em 1em;
-  }
+
+    /* bring attention to title text  */
+    color: #555;
+}
 
 h2 {
     /* line spacing */
     margin-top: 1em;
     padding-top: 1em;
+}
+
+h1, 
+h2,
+strong {
+    /* bring attention to title text */
+    color: #333;
+}
+
+footer {
+    color: #999;
 }
