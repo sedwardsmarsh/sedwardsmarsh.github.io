@@ -4,6 +4,18 @@
     --link-and-footer: #ff9568;
 }
 
+sam {
+    color: var(--main-text);
+}
+
+edwards {
+    color: var(--link-and-footer);
+}
+
+marsh {
+    color: #ffac88;
+}
+
 @media (max-width: 700px) {
     body,
     html {
