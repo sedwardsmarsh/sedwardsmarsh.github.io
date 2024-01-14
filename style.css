@@ -34,15 +34,22 @@ body {
 li {
     /* add more spacing between list items */
     padding: 0.1em;
+    font-size: 1.1em;
 }
 
 h1 {
     font-size: 3em;
 } 
 
-@media (min-width: 700px) {
+h2 {
+    font-size: 2em;
+    padding: 0em;
+    margin: 0em;
+}
+
+@media (max-width: 700px) {
     h2 {
-        font-size: 2em;
+        font-size: 3em;
     }
 }
 
