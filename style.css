@@ -14,22 +14,22 @@ body {
     color: #555;
 }
 
-h2 {
-    /* line spacing */
-    margin-top: 1em;
-    padding-top: 1em;
-}
-
 h1, 
 h2,
 strong {
     color: #333;
 }
 
-footer {
-    color: #999;
+h2 {
+    /* line spacing */
+    margin-top: 1em;
+    padding-top: 1em;
 }
 
 a {
     color: #e8591c;
+}
+
+footer {
+    color: #999;
 }
