@@ -1,3 +1,10 @@
+:root {
+    --main-text: #d64b10;
+    --underline: ;
+    --body-bg-color: #ffdac8;
+    --footer: #ff8652;
+}
+
 body {
     /* page width */
     margin: 0 auto;
@@ -11,9 +18,9 @@ body {
     padding: 4em 1em;
 
     /* bring attention to title text  */
-    color: #d64b10;
+    color: var(--main-text);
 
-    background-color: #ffdac8;
+    background-color: var(--body-bg-color);
 }
 
 li {
@@ -24,13 +31,22 @@ li {
 h1, 
 h2,
 strong {
-    color: #d64b10;
+    color: var(--strong);
 }
 
 h2 {
     /* line spacing */
     margin-top: 1em;
     padding-top: 1em;
+}
+
+hr {
+    border: none;
+    height: 10px;
+    color: var(--main-text);
+    background-color: var(--main-text); 
+    width: 1000%;
+    margin-left: -500%;
 }
 
 a {
@@ -46,5 +62,5 @@ a {
 time,
 footer
 {
-    color: #ff8652;
+    color: 
 }
