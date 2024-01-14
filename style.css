@@ -1,4 +1,18 @@
 body {
+    /* page width */
     margin: 0 auto;
     max-width: 50em;
+
+    /* font */
+    font-family: "Helvetica", "Arial", sans-serif;
+
+    /* line spacing */
+    line-height: 1.5;
+    padding: 4em 1em;
   }
+
+h2 {
+    /* line spacing */
+    margin-top: 1em;
+    padding-top: 1em;
+}
