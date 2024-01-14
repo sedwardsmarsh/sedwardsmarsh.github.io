@@ -40,6 +40,12 @@ h1 {
     font-size: 3em;
 } 
 
+@media (min-width: 700px) {
+    h2 {
+        font-size: 2em;
+    }
+}
+
 h1,
 h2,
 strong {
