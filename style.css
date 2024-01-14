@@ -39,7 +39,7 @@ li {
 
 h1 {
     font-size: 3em;
-} 
+}
 
 h2 {
     font-size: 2em;
@@ -69,7 +69,7 @@ hr {
     border: none;
     height: 10px;
     color: var(--main-text);
-    background-color: var(--main-text); 
+    background-color: var(--main-text);
     width: 1000%;
     margin-left: -500%;
 }
@@ -78,14 +78,15 @@ a {
     color: var(--main-text);
 
     text-decoration: underline;
-    -webkit-text-decoration-color: var(--link-and-footer); /* safari still uses vendor prefix */
+    -webkit-text-decoration-color: var(
+        --link-and-footer
+    ); /* safari still uses vendor prefix */
     text-decoration-color: var(--link-and-footer);
 
     text-decoration-thickness: 3px;
 }
 
 time,
-footer
-{
-    color: var(--link-and-footer)
+footer {
+    color: var(--link-and-footer);
 }
