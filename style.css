@@ -11,15 +11,20 @@ body {
     padding: 4em 1em;
 
     /* bring attention to title text  */
-    color: #555;
+    color: #d64b10;
 
-    background-color: #fff0e9;
+    background-color: #ffdac8;
+}
+
+li {
+    /* add more spacing between list items */
+    padding: 0.1em;
 }
 
 h1, 
 h2,
 strong {
-    color: #333;
+    color: #d64b10;
 }
 
 h2 {
@@ -29,9 +34,17 @@ h2 {
 }
 
 a {
-    color: #e8591c;
+    color: #d64b10;
+
+    text-decoration: underline;
+    -webkit-text-decoration-color: #ffb392; /* safari still uses vendor prefix */
+    text-decoration-color: #ffb392;
+
+    text-decoration-thickness: 3px;
 }
 
-footer {
-    color: #999;
+time,
+footer
+{
+    color: #ff8652;
 }
