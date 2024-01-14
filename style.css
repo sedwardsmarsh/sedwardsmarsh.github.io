@@ -1,8 +1,16 @@
 :root {
-    --main-text: #d64b10;
-    --underline: ;
+    --main-text: #e34a08;
     --body-bg-color: #ffdac8;
-    --footer: #ff8652;
+    --link-and-footer: #ff9568;
+}
+
+@media (max-width: 700px) {
+    body,
+    html {
+        /* disable horizontal scrolling */
+        max-width: 100%;
+        overflow-x: hidden;
+    }
 }
 
 body {
@@ -28,7 +36,11 @@ li {
     padding: 0.1em;
 }
 
-h1, 
+h1 {
+    font-size: 3em;
+} 
+
+h1,
 h2,
 strong {
     color: var(--strong);
@@ -50,11 +62,11 @@ hr {
 }
 
 a {
-    color: #d64b10;
+    color: var(--main-text);
 
     text-decoration: underline;
-    -webkit-text-decoration-color: #ffb392; /* safari still uses vendor prefix */
-    text-decoration-color: #ffb392;
+    -webkit-text-decoration-color: var(--link-and-footer); /* safari still uses vendor prefix */
+    text-decoration-color: var(--link-and-footer);
 
     text-decoration-thickness: 3px;
 }
@@ -62,5 +74,5 @@ a {
 time,
 footer
 {
-    color: 
+    color: var(--link-and-footer)
 }
