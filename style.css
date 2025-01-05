@@ -2,6 +2,8 @@
     --main-text: #e34a08;
     --body-bg-color: #ffdac8;
     --link-and-footer: #ff9568;
+    --blockquote-color: #ff7134;
+    /* --blockquote-bg-color: #ffd3bd; */
 }
 
 sam {
@@ -96,6 +98,17 @@ a {
     text-decoration-color: var(--link-and-footer);
 
     text-decoration-thickness: 3px;
+}
+
+img {
+    margin: auto;
+    display: block;
+    border: 2px solid var(--link-and-footer);
+}
+
+blockquote {
+    color: var(--blockquote-color);
+    /* background-color: var(--blockquote-bg-color);    */
 }
 
 time,
