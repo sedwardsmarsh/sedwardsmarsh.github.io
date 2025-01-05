@@ -6,6 +6,18 @@
     <title>Sam Edwards-Marsh</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="icon" href="favicon.png" />
+
+    <!-- PyScript CSS -->
+    <link
+      rel="stylesheet"
+      href="https://pyscript.net/releases/2024.2.1/core.css"
+    />
+
+    <!-- This script tag bootstraps PyScript -->
+    <script
+      type="module"
+      src="https://pyscript.net/releases/2024.2.1/core.js"
+    ></script>
   </head>
 
   <body>
@@ -358,6 +370,21 @@
             </ol>
           </blockquote>
           Very cool.
+        </li>
+
+        <li id="tea bags">
+          <strong>Tea Bags</strong>
+          <time>1/5/25</time>
+          <br />
+          I drink tea at work, sometimes several bags a day. A while after I
+          started drinking tea, I noticed how many tea bags I was throwing away.
+          This felt like a missed opportuinity to do something. I'm sure you're
+          having the same thought, "obviously, you can record each time you
+          drink tea by writing a timestamp on the bag". And just like that a new
+          project nobody asked for was born.
+          <br />
+          <div id="tbplot"></div>
+          <script type="py" src="tea bags.py" config="pyconfig.toml"></script>
         </li>
       </ul>
     </section>
