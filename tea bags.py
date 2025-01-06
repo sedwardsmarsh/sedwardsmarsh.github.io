@@ -38,8 +38,8 @@ data: list[tuple[datetime, bool]] = [(ts[0], False) if len(ts)==1 else (ts[1], T
 print(f'{len(data)=} {data[:5]=}')
 
 # Separate dates from clock times.
-# date_times = [[clock_time for ts in pair]]
-# clock_times = [[]]
+date_times = [(t[0].date(), t[1]) for t in data]
+clock_times = [(t[0].time(), t[1]) for t in data]
 
 # print(f'{date_times[:5]} {clock_times[:5]}')
 
