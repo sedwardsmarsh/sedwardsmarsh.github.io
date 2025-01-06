@@ -60,12 +60,13 @@ print(f'{r[:5]=}\n{theta[:5]=}')
 np.random.seed(0)
 
 # Compute areas and colors
-N = 150 # data points
-r = 2 * np.random.rand(N) # radius 
-theta = 2 * np.pi * np.random.rand(N)
-marker_size = 100 * r**2 # size of each point
-colors = theta
+# N = 159 # data points
+# r = 2 * np.random.rand(N) # radius 
+# theta = 2 * np.pi * np.random.rand(N)
+# marker_size = [.5 * p for p in r] # size of each point
+# colors = theta
 
+# Plot the data.
 fig = plt.figure()
 ax = fig.add_subplot(projection='polar')
 c = ax.scatter(theta, r, c=colors, s=marker_size, cmap='hsv', alpha=0.75)
