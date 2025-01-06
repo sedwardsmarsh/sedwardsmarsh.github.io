@@ -67,7 +67,10 @@ deg_per_clock_num = 360 / 12
 clock_angles = [i * deg_per_clock_num for i in range(12)]
 # Construct labels so they emulate a 12-hour clock
 clock_labels = [f'{i}:00' for i in range(1, 12+1)]
-clock_labels = clock_labels[2::-1] + clock_labels[:2:-1]
+clock_labels = clock_labels[::-1]
+
+# Set the location of 0 for theta.
+ax.set_theta_zero_location('N')
 
 # Set the labels for the angular axis
 ax.set_thetagrids(angles=clock_angles, 
