@@ -1,3 +1,5 @@
 name = "Tea Bags"
 description = "Displays a polar scatter plot."
 packages = ["matplotlib"]
+[files]
+"./tea bag transcription.csv" = ""

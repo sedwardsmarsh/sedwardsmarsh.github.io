@@ -1,36 +1,54 @@
 import matplotlib.pyplot as plt
 import matplotlib.tri as tri
 import numpy as np
-
 from pyscript import display
 
-# First create the x and y coordinates of the points.
-n_angles = 36
-n_radii = 8
-min_radius = 0.25
-radii = np.linspace(min_radius, 0.95, n_radii)
 
-angles = np.linspace(0, 2 * np.pi, n_angles, endpoint=False)
-angles = np.repeat(angles[..., np.newaxis], n_radii, axis=1)
-angles[:, 1::2] += np.pi / n_angles
+# # Load the .csv data.
+# data = np.genfromtxt('./tea bag transcription.csv', 
+#                     dtype=str, 
+#                     delimiter=',')
 
-x = (radii * np.cos(angles)).flatten()
-y = (radii * np.sin(angles)).flatten()
-z = (np.cos(radii) * np.cos(3 * angles)).flatten()
+# # Convert the data to a list.
+# data = [list(i) for i in data]
 
-# Create the Triangulation; no triangles so Delaunay triangulation created.
-triang = tri.Triangulation(x, y)
+# # Remove enclosing quotes from data.
+# i = 0
+# while i < len(data):
+#     data[i] = [entry.replace('"', '') for entry in data[i]]
+#     i += 1
 
-# Mask off unwanted triangles.
-triang.set_mask(np.hypot(x[triang.triangles].mean(axis=1),
-                            y[triang.triangles].mean(axis=1))
-                < min_radius)
+# # Fixing random state for reproducibility
+# np.random.seed(0)
 
-fig1, ax1 = plt.subplots()
-ax1.set_aspect('equal')
-tpc = ax1.tripcolor(triang, z, shading='flat')
-fig1.colorbar(tpc)
-ax1.set_title('tripcolor of Delaunay triangulation, flat shading')
+# Compute areas and colors
+N = 150 # data points
+r = 2 * np.random.rand(N) # radius 
+theta = 2 * np.pi * np.random.rand(N)
+marker_size = 100 * r**2 # size of each point
+colors = theta
+
+fig = plt.figure()
+ax = fig.add_subplot(projection='polar')
+c = ax.scatter(theta, r, c=colors, s=marker_size, cmap='hsv', alpha=0.75)
+
+# Restrict the range of theta to [0deg,180deg].
+ax.set_thetamin(0)
+ax.set_thetamax(360)
+
+# Get the labels for the angular axis
+deg_per_clock_num = 360 / 12
+clock_angles = [i * deg_per_clock_num for i in range(12)]
+# Construct labels so they emulate a 12-hour clock
+clock_labels = [f'{i}:00' for i in range(1, 12+1)]
+clock_labels = clock_labels[2::-1] + clock_labels[:2:-1]
+
+# Set the labels for the angular axis
+ax.set_thetagrids(angles=clock_angles, 
+                  labels=clock_labels)
+
+# Set the labels for the radial axis
+ax.set_rgrids([1], labels=['1'])
 
 # Send the plot to the DOM (the div with id `tbplot`)
-display(fig1, target="tbplot")
+display(fig, target="tbplot")
