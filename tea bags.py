@@ -1,25 +1,39 @@
 import matplotlib.pyplot as plt
 import matplotlib.tri as tri
 import numpy as np
+from datetime import datetime
 from pyscript import display
 
+def parse_timestamp(timestamp: str) -> datetime:
+    formats = [
+        "%m/%d/%y %I:%M %p",  # 12-hour clock with AM/PM
+        "%m/%d/%y %I:%M%p",  # 12-hour clock with AM/PM no spacing
+        "%m/%d/%y %H:%M",     # 24-hour clock
+        "%m/%d/%y %I:%M",     # 12-hour clock without AM/PM
+    ]
+    for fmt in formats:
+        try:
+            return datetime.strptime(timestamp, fmt)
+        except ValueError:
+            continue
+    raise ValueError(f"Timestamp format not recognized: {timestamp}")
 
-# # Load the .csv data.
-# data = np.genfromtxt('./tea bag transcription.csv', 
-#                     dtype=str, 
-#                     delimiter=',')
+# Load the .csv data.
+data = np.genfromtxt('./tea bag transcription.csv', 
+                    dtype=str, 
+                    delimiter=',',
+                    skip_header=1)
 
-# # Convert the data to a list.
-# data = [list(i) for i in data]
+# Remove double quotes in data.
+data = [[timestamp.replace('"', '') for timestamp in pair] for pair in data]
 
-# # Remove enclosing quotes from data.
-# i = 0
-# while i < len(data):
-#     data[i] = [entry.replace('"', '') for entry in data[i]]
-#     i += 1
+# Convert timestamps to datetime objects.
+data = [[parse_timestamp(ts) for ts in pair if len(ts) > 0] for pair in data]
 
-# # Fixing random state for reproducibility
-# np.random.seed(0)
+print(f'{data[:5]=}')
+
+# Fixing random state for reproducibility
+np.random.seed(0)
 
 # Compute areas and colors
 N = 150 # data points
@@ -47,6 +61,7 @@ clock_labels = clock_labels[2::-1] + clock_labels[:2:-1]
 ax.set_thetagrids(angles=clock_angles, 
                   labels=clock_labels)
 
+# TODO: Scale the radial axis dynamically based on the range of dates.
 # Set the labels for the radial axis
 ax.set_rgrids([1], labels=['1'])
 
