@@ -69,29 +69,33 @@ np.random.seed(0)
 # Plot the data.
 fig = plt.figure()
 ax = fig.add_subplot(projection='polar')
-c = ax.scatter(theta, r, c=colors, s=marker_size, cmap='hsv', alpha=0.75)
-
-# Restrict the range of theta to [0deg,180deg].
-ax.set_thetamin(0)
-ax.set_thetamax(360)
+# c = ax.scatter(theta, r, c=colors, s=marker_size, cmap='hsv', alpha=0.75)
+c = ax.scatter(theta, r, s=r, c=r, cmap='gist_rainbow')
 
 # Get the labels for the angular axis
 deg_per_clock_num = 360 / 12
 clock_angles = [i * deg_per_clock_num for i in range(12)]
 # Construct labels so they emulate a 12-hour clock
 clock_labels = [f'{i}:00' for i in range(1, 12+1)]
-clock_labels = clock_labels[::-1]
+clock_labels = [clock_labels[-1]] + clock_labels[:-1]
 
 # Set the location of 0 for theta.
 ax.set_theta_zero_location('N')
+
+# Set theta to increcrease clockwise.
+ax.set_theta_direction('clockwise')
 
 # Set the labels for the angular axis
 ax.set_thetagrids(angles=clock_angles, 
                   labels=clock_labels)
 
-# TODO: Scale the radial axis dynamically based on the range of dates.
 # Set the labels for the radial axis
 ax.set_rgrids([1], labels=['1'])
+
+# TODO: Scale the radial axis dynamically based on the range of dates.
+# Scale the radial axis based on the range of dates.
+ax.set_rmin(min(r))
+ax.set_rmax(max(r))
 
 # Send the plot to the DOM (the div with id `tbplot`)
 display(fig, target="tbplot")
