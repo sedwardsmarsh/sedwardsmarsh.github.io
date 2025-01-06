@@ -33,7 +33,7 @@ data = [[parse_timestamp(ts) for ts in pair if len(ts) > 0] for pair in data]
 # Replace timestamps which have corrections.
 # The new format of data will be list[tuple[datetime, bool]] 
 # The bool indicates whether the timestamp was corrected.
-data = [(ts, False) if len(ts)==1 else (ts[1], True) for ts in data]
+data: list[tuple[datetime, bool]] = [(ts[0], False) if len(ts)==1 else (ts[1], True) for ts in data]
 
 print(f'{len(data)=} {data[:5]=}')
 
