@@ -43,6 +43,18 @@ clock_times = [(t[0].time(), t[1]) for t in data]
 
 # print(f'{date_times[:5]} {clock_times[:5]}')
 
+# Convert dates into r points.
+# Use the oordinal time.
+r = [d[0].toordinal() for d in date_times]
+# Scale r logarithmically
+r = [np.log(i) for i in r]
+
+# Convert times into theta points.
+# Represent time as a fraction of the day and scale to 2pi radians.
+# theta = [(c[0].hour + c[0].minute / 60 + c[0].second / 60) / 24 * 2 * np.pi for c in clock_times]
+theta = [(c[0].hour + c[0].minute / 60) / 24 * 2 * np.pi for c in clock_times]
+
+print(f'{r[:5]=}\n{theta[:5]=}')
 
 # Fixing random state for reproducibility
 np.random.seed(0)
