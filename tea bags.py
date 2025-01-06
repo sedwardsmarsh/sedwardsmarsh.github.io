@@ -7,7 +7,7 @@ from pyscript import display
 def parse_timestamp(timestamp: str) -> datetime:
     formats = [
         "%m/%d/%y %I:%M %p",  # 12-hour clock with AM/PM
-        "%m/%d/%y %I:%M%p",  # 12-hour clock with AM/PM no spacing
+        "%m/%d/%y %I:%M%p",   # 12-hour clock with AM/PM no spacing
         "%m/%d/%y %H:%M",     # 24-hour clock
         "%m/%d/%y %I:%M",     # 12-hour clock without AM/PM
     ]
@@ -30,7 +30,19 @@ data = [[timestamp.replace('"', '') for timestamp in pair] for pair in data]
 # Convert timestamps to datetime objects.
 data = [[parse_timestamp(ts) for ts in pair if len(ts) > 0] for pair in data]
 
-print(f'{data[:5]=}')
+# Replace timestamps which have corrections.
+# The new format of data will be list[tuple[datetime, bool]] 
+# The bool indicates whether the timestamp was corrected.
+data = [(ts, False) if len(ts)==1 else (ts[1], True) for ts in data]
+
+print(f'{len(data)=} {data[:5]=}')
+
+# Separate dates from clock times.
+# date_times = [[clock_time for ts in pair]]
+# clock_times = [[]]
+
+# print(f'{date_times[:5]} {clock_times[:5]}')
+
 
 # Fixing random state for reproducibility
 np.random.seed(0)
