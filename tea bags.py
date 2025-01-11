@@ -82,6 +82,10 @@ clock_angles = [i * deg_per_clock_num for i in range(12)]
 clock_labels = [f'{i}:00' for i in range(1, 12+1)]
 clock_labels = [clock_labels[-1]] + clock_labels[:-1]
 
+# Pair the fractions of pi with clock times, for reference.
+pi_slice = 2 * np.pi / 12
+clock_labels = [f'{t}, {pi_slice * i:.02}π' for i, t in enumerate(clock_labels)]
+
 # Set the location of 0 for theta.
 ax.set_theta_zero_location('N')
 
