@@ -47,8 +47,10 @@ clock_times = [(t[0].time(), t[1]) for t in data]
 # Convert dates into r points.
 # Use the oordinal time.
 r = [d[0].toordinal() for d in date_times]
-# Scale r logarithmically
-r = [np.log(i) for i in r]
+# Scale r into [0,1]
+r_min = np.min(r)
+r_max = np.max(r)
+r = [(i - np.min(r)) / (np.max(r) - np.min(r)) for i in r]
 
 # Convert times into theta points.
 # Represent time as a fraction of the day and scale to 2pi radians.
