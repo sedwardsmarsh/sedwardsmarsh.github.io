@@ -54,8 +54,7 @@ r = [(i - np.min(r)) / (np.max(r) - np.min(r)) for i in r]
 
 # Convert times into theta points.
 # Represent time as a fraction of the day and scale to 2pi radians.
-# theta = [(c[0].hour + c[0].minute / 60 + c[0].second / 60) / 24 * 2 * np.pi for c in clock_times]
-theta = [(c[0].hour + c[0].minute / 60) / 24 * 2 * np.pi for c in clock_times]
+theta = [(c[0].hour + c[0].minute / 60 + c[0].second / 60) / 12 * 2 * np.pi for c in clock_times]
 
 print(f'{r[:5]=}\n{theta[:5]=}')
 
