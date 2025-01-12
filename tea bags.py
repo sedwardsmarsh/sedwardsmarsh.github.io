@@ -80,18 +80,18 @@ ax.set_rmin(min(r) - 0.1)
 ax.set_rmax(max(r) + 0.1)
 
 # Set the labels for the radial axis
-ax.set_rgrids([min(r), np.mean(r), max(r)], labels=[str(min(r)), f'{np.mean(r):.02}', str(max(r))])
+ax.set_rgrids([min(r), np.mean(r), max(r)], labels=[str(min(r)), f'{np.mean(r):.01}', str(max(r))])
 
 # Get the labels for the angular axis
 deg_per_clock_num = 360 / 12
 clock_angles = [i * deg_per_clock_num for i in range(12)]
 # Construct labels so they emulate a 12-hour clock
-clock_labels = [f'{i}:00' for i in range(1, 12+1)]
+clock_labels = [str(i) for i in range(1, 12+1)]
 clock_labels = [clock_labels[-1]] + clock_labels[:-1]
 
 # Pair the fractions of pi with clock times, for reference.
-pi_slice = 2 * np.pi / 12
-clock_labels = [f'{t}, {pi_slice * i:.02}π' for i, t in enumerate(clock_labels)]
+# pi_slice = 2 * np.pi / 12
+# clock_labels = [f'{t}, {pi_slice * i:.02}π' for i, t in enumerate(clock_labels)]
 
 # Set the location of 0 for theta.
 ax.set_theta_zero_location('N')
