@@ -72,7 +72,15 @@ np.random.seed(0)
 fig = plt.figure()
 ax = fig.add_subplot(projection='polar')
 # c = ax.scatter(theta, r, c=colors, s=marker_size, cmap='hsv', alpha=0.75)
-c = ax.scatter(theta, r, s=r, c=r, cmap='gist_rainbow')
+c = ax.scatter(theta, r, c=r, cmap='gist_rainbow')
+ax.scatter([theta[0], theta[-1]], [r[0], r[-1]], facecolor='none', edgecolors='black')
+
+# Scale the radial axis based on the range of dates.
+ax.set_rmin(min(r) - 0.1)
+ax.set_rmax(max(r) + 0.1)
+
+# Set the labels for the radial axis
+ax.set_rgrids([min(r), np.mean(r), max(r)], labels=[str(min(r)), f'{np.mean(r):.02}', str(max(r))])
 
 # Get the labels for the angular axis
 deg_per_clock_num = 360 / 12
