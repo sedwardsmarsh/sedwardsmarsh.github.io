@@ -4,6 +4,8 @@ import numpy as np
 from datetime import datetime
 from pyscript import display
 
+DEBUG: bool = False
+
 def parse_timestamp(timestamp: str) -> datetime:
     formats = [
         "%m/%d/%y %I:%M %p",  # 12-hour clock with AM/PM
@@ -36,13 +38,15 @@ data = [[parse_timestamp(ts) for ts in pair if len(ts) > 0] for pair in data]
 data: list[tuple[datetime, bool]] = [(ts[0], False) if len(ts)==1 else (ts[1], True) for ts in data]
 data.sort()
 
-print(f'{len(data)=} {data[:5]=}')
+if DEBUG:
+    print(f'\n{len(data)=}\n{sorted(data, key=lambda x: x[0])[:5]=}\n')
 
 # Separate dates from clock times.
 date_times = [(t[0].date(), t[1]) for t in data]
 clock_times = [(t[0].time(), t[1]) for t in data]
 
-# print(f'{date_times[:5]} {clock_times[:5]}')
+if DEBUG:
+    print(f'{date_times[:5]=}\n{clock_times[:5]=}')
 
 # Convert dates into r points.
 # Use the oordinal time.
@@ -56,17 +60,10 @@ r = [(i - np.min(r)) / (np.max(r) - np.min(r)) for i in r]
 # Represent time as a fraction of the day and scale to 2pi radians.
 theta = [(c[0].hour + c[0].minute / 60 + c[0].second / 60) / 12 * 2 * np.pi for c in clock_times]
 
-print(f'{r[:5]=}\n{theta[:5]=}')
-
-# Fixing random state for reproducibility
-np.random.seed(0)
-
-# Compute areas and colors
-# N = 159 # data points
-# r = 2 * np.random.rand(N) # radius 
-# theta = 2 * np.pi * np.random.rand(N)
-# marker_size = [.5 * p for p in r] # size of each point
-# colors = theta
+if DEBUG:
+    print(f'{r[:5]=}\n{theta[:5]=}')
+    print(f'\n{min(r)=} {np.mean(r)=} {max(r)=} {np.std(r)=}')
+    print(f'\n{min(theta)=} {np.mean(theta)=} {max(theta)=} {np.std(theta)=}')
 
 # Plot the data.
 fig = plt.figure()
@@ -92,8 +89,9 @@ clock_labels = [str(i) for i in range(1, 12+1)]
 clock_labels = [clock_labels[-1]] + clock_labels[:-1]
 
 # Pair the fractions of pi with clock times, for reference.
-# pi_slice = 2 * np.pi / 12
-# clock_labels = [f'{t}, {pi_slice * i:.02}π' for i, t in enumerate(clock_labels)]
+if DEBUG:
+    pi_slice = 2 * np.pi / 12
+    clock_labels = [f'{t}, {pi_slice * i:.02}π' for i, t in enumerate(clock_labels)]
 
 # Set the location of 0 for theta.
 ax.set_theta_zero_location('N')
@@ -104,14 +102,6 @@ ax.set_theta_direction('clockwise')
 # Set the labels for the angular axis
 ax.set_thetagrids(angles=clock_angles, 
                   labels=clock_labels)
-
-# Set the labels for the radial axis
-ax.set_rgrids([1], labels=['1'])
-
-# TODO: Scale the radial axis dynamically based on the range of dates.
-# Scale the radial axis based on the range of dates.
-ax.set_rmin(min(r))
-ax.set_rmax(max(r))
 
 # Send the plot to the DOM (the div with id `tbplot`)
 display(fig, target="tbplot")
