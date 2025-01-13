@@ -66,19 +66,18 @@ if DEBUG:
     print(f'\n{min(theta)=} {np.mean(theta)=} {max(theta)=} {np.std(theta)=}')
 
 # Plot the data.
-fig = plt.figure()
-fig.set_facecolor('None')
+fig = plt.figure(dpi=90)
 ax = fig.add_subplot(projection='polar')
-ax.set_facecolor('None')
-ax.set_title('Time of Day I Drank Tea')
-ax.scatter(theta, r, c=r, cmap='gist_rainbow')
-ax.scatter([theta[0], theta[-1]], [r[0], r[-1]], facecolor='none', edgecolors='black')
+ax.scatter(label='Entry', x=theta[1:-1], y=r[1:-1], c=r[1:-1], cmap='gist_rainbow')
+ax.scatter(label='Terminal Entry', x=[theta[0], theta[-1]], y=[r[0], r[-1]], facecolor='white', edgecolors='black')
 
 # Scale the radial axis based on the range of dates.
-ax.set_rmin(min(r) - 0.1)
-ax.set_rmax(max(r) + 0.1)
+r_axis_space = 0.3
+ax.set_rmin(min(r) - r_axis_space)
+ax.set_rmax(max(r) + r_axis_space)
 
 # Set the labels for the radial axis
+ax.set_rlabel_position(210)
 ax.set_rgrids([min(r), np.mean(r), max(r)], labels=[str(min(r)), f'{np.mean(r):.01}', str(max(r))])
 
 # Get the labels for the angular axis
@@ -102,6 +101,15 @@ ax.set_theta_direction('clockwise')
 # Set the labels for the angular axis
 ax.set_thetagrids(angles=clock_angles, 
                   labels=clock_labels)
+
+# Customize plot appearance.
+ax.set_title('Time of Day I Drank Tea')
+fig.set_facecolor('None') # Global background
+ax.set_facecolor('None') # Polar plot background
+
+# Add plot legend.
+plt.legend(loc='lower right', bbox_to_anchor=(1.3, 1)) 
+# plt.legend(loc='lower right') 
 
 # Send the plot to the DOM (the div with id `tbplot`)
 display(fig, target="tbplot")
