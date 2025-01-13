@@ -70,9 +70,11 @@ np.random.seed(0)
 
 # Plot the data.
 fig = plt.figure()
+fig.set_facecolor('None')
 ax = fig.add_subplot(projection='polar')
-# c = ax.scatter(theta, r, c=colors, s=marker_size, cmap='hsv', alpha=0.75)
-c = ax.scatter(theta, r, c=r, cmap='gist_rainbow')
+ax.set_facecolor('None')
+ax.set_title('Time of Day I Drank Tea')
+ax.scatter(theta, r, c=r, cmap='gist_rainbow')
 ax.scatter([theta[0], theta[-1]], [r[0], r[-1]], facecolor='none', edgecolors='black')
 
 # Scale the radial axis based on the range of dates.
