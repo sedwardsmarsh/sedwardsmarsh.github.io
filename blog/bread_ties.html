@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sam Edwards-Marsh</title>
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <link rel="icon" href="../favicon.png" />
+  </head>
+  <body>
+    <img
+      src="../data/bread ties.jpeg"
+      alt="Picture of my bread tie collection on my coffee table"
+      width="90%"
+    />
+    <h1>Bread Ties</h1>
+    <i> Started <time>1/4/25</time></i
+    >.
+    <br />
+    <i>
+      Edit <time>1/4/25 18:33 PST</time> I noticed that gemini didn't count the
+      blue ties correctly, this is a major bummer.
+    </i>
+    <br />
+    <i>
+      Edit <time>1/4/25 20:31 PST</time> I forgot to mention that I ran google
+      ai playground on my phone.
+    </i>
+    <br />
+    <br />
+    I've been collecting bread ties on and off for the last two years. I started
+    collecting them after seeing a post on instagram where someone had glued
+    them in a notebook. I remember their collection being much more impressive,
+    mostly because there was variations in colors.
+    <br />
+    Having seen the why combination post where some guy used google ai
+    playground to make a .csv from a video of him scrolling through his gmail, I
+    thought I'd do the same. So I laid out the ties on my table and sent this
+    picture to google ai studio. This first run through used the auto-selected
+    model, which was 'Gemini 2.0 Flash Experimental'.
+
+    <br />
+    This was the prompt:
+    <br />
+    <blockquote>
+      Do the following things: 1. Count the number of bread ties in the picture.
+      2. Enumerate the bread ties and include the color of the tie, the text
+      written and the color of the text on each one. If the text is illegible,
+      do your best to approximate what it says. If there is no text on the bread
+      tie, say “no text”.
+    </blockquote>
+    <br />
+    It counted 20 bread ties (there are 22) and gave a pretty good list of the
+    different attributes of each:
+    <br />
+    <blockquote>
+      <ol>
+        <li>Color: Red Text: FEB 24 Text Color: White</li>
+
+        <li>Color: White Text: 20041N58 042024 Text Color: Blue</li>
+
+        <li>Color: White Text: 5 59 Text Color: Black</li>
+
+        <li>
+          Color: White Text: Best By 03/23/2024 23 342 20 Text Color: Black
+        </li>
+
+        <li>Color: White Text: BEST BEFORE 03-01-24 Text Color: Black</li>
+
+        <li>Color: White Text: $7.99 LM2 24 110 111 01:59 Text Color: Black</li>
+
+        <li>Color: Blue Text: No Text Text Color: N/A</li>
+
+        <li>Color: White Text: 2023 23261 345 Text Color: Blue</li>
+
+        <li>Color: White Text: BEST BEFORE 01-17-25 Text Color: Black</li>
+
+        <li>Color: White Text: 23/12/28 Text Color: Black</li>
+
+        <li>Color: White Text: 24 010 011 L3 Text Color: Black</li>
+
+        <li>Color: Blue Text: No Text Text Color: N/A</li>
+
+        <li>Color: Blue Text: No Text Text Color: N/A</li>
+
+        <li>Color: Blue Text: No Text Text Color: N/A</li>
+
+        <li>Color: White Text: BEST BEFORE 09-13-24 Text Color: Black</li>
+
+        <li>
+          Color: White Text: $7.99 L3 24 097 097 13 Best By 07/20/2024 Text
+          Color: Black
+        </li>
+
+        <li>Color: White Text: BEST BEFORE 08-23-24 Text Color: Black</li>
+
+        <li>Color: White Text: BEST BEFORE 03-13-24 Text Color: Black</li>
+
+        <li>Color: White Text: 01 25 24 T C Text Color: Blue</li>
+
+        <li>Color: Blue Text: No Text Text Color: N/A</li>
+      </ol>
+    </blockquote>
+    Which is not bad, most of the information was read correctly.
+    <br />
+    However, I did notice some text was missing from the red tie:
+    <br />
+    <img src="../data/red bread tie.jpg" alt="Red bread tie pic" width="40%" />
+    <br />
+    So I decided to run it again with a different model to hopefully glean the
+    missing text of the red tag. For the second prompt I used the model 'Gemini
+    1.5 Pro' with the following prompt:
+    <br />
+    <blockquote>
+      Good job for the first pass, let's try again. I noticed there are actually
+      22 ties. Please take your time and slowly observe each and every bread
+      tie. Thoroughly examine each one. And this time, format it as a .csv.
+    </blockquote>
+    Here was it's response:
+    <br />
+    <blockquote>
+      You are absolutely right! My apologies. It's easy to miss a couple with so
+      many similar items. Here's the corrected count and the CSV data, after a
+      much more careful examination:
+      <ol>
+        <li>Count of Bread Ties: 22</li>
+        <li>
+          CSV Data:
+          <a href="../data/breadties.csv">Click to download data</a>
+        </li>
+      </ol>
+    </blockquote>
+    It also noted the "Key improvements" it made:
+    <blockquote>
+      <ol>
+        <li>Corrected Count: Includes all 22 ties.</li>
+
+        <li>CSV Format: Ready for spreadsheet use.</li>
+
+        <li>
+          Multi-line Text Handling: Text spanning multiple lines within a bread
+          tie is enclosed in double quotes and uses line breaks within the
+          field.
+        </li>
+
+        <li>
+          Empty Text: Blank ties are marked as empty strings rather than "No
+          Text".
+        </li>
+
+        <li>
+          More Precise Color: The blue ties are described as "Light Blue" for
+          better distinction.
+        </li>
+
+        <li>
+          Corrected OCR: I have double-checked the OCR to ensure it's as
+          accurate as possible from the image. Some blurry sections might still
+          have slight inaccuracies.
+        </li>
+
+        <li>
+          I believe this revised version is much more complete and accurate. Let
+          me know if you have any other questions!
+        </li>
+      </ol>
+    </blockquote>
+    Very cool.
+  </body>
+</html>

@@ -6,6 +6,9 @@ from pyscript import display
 
 DEBUG: bool = False
 
+# def time_to_int(t: datetime.time):
+#     return t.hour * 3600 + t.minute * 60 + t.second
+
 def parse_timestamp(timestamp: str) -> datetime:
     formats = [
         "%m/%d/%y %I:%M %p",  # 12-hour clock with AM/PM
@@ -44,6 +47,11 @@ if DEBUG:
 # Separate dates from clock times.
 date_times = [(t[0].date(), t[1]) for t in data]
 clock_times = [(t[0].time(), t[1]) for t in data]
+
+# # Calculate average time of day tea was had.
+# avg_time = np.mean([time_to_int(t[0]) for t in clock_times])
+# print(f'{avg_time=} {datetime.time(avg_time // 3600, (avg_time % 3600) // 60, avg_time % 60)=}')
+
 
 if DEBUG:
     print(f'{date_times[:5]=}\n{clock_times[:5]=}')

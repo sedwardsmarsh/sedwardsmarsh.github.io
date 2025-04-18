@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sam Edwards-Marsh</title>
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <link rel="icon" href="../favicon.png" />
+
+    <!-- PyScript CSS -->
+    <link
+      rel="stylesheet"
+      href="https://pyscript.net/releases/2024.2.1/core.css"
+    />
+
+    <!-- This script tag bootstraps PyScript -->
+    <script
+      type="module"
+      src="https://pyscript.net/releases/2024.2.1/core.js"
+    ></script>
+  </head>
+
+  <body>
+    <img src="../data/sea of tea.jpeg" alt="sea of tea" width="100%" />
+    <br />
+    <h1>Student's Tea-test</h1>
+    <h1></h1>
+    <i> Started <time>1/12/25</time></i
+    >.
+    <br />
+    <i> Edit <time>1/12/25 23:38 PST</time> Added explanation for plot. </i>
+    <br />
+    <br />
+    I drink cups of tea, sometimes several cups a day.
+    <a
+      href="https://www.google.com/search?q=how+much+water+does+chatgpt+use&rlz=1C5ZNUK_enUS1136US1136&oq=how+much+water+does+chat&gs_lcrp=EgZjaHJvbWUqDQgAEAAYgwEYsQMYgAQyDQgAEAAYgwEYsQMYgAQyBggBEEUYOTIHCAIQABiABDIMCAMQABgUGIcCGIAEMgcIBBAAGIAEMgcIBRAAGIAEMgcIBhAAGIAEMg0IBxAAGIMBGLEDGIAEMgcICBAAGIAEMgcICRAAGIAE0gEIMzkxNGowajmoAgCwAgE&sourceid=chrome&ie=UTF-8"
+      >ChatGPT drinks several liters of water a day.</a
+    >
+    <br />
+    A while after I started drinking tea, I noticed how many tea bags I was
+    throwing away. Surely, this was a missed opportuinity for a project. I'm
+    sure you're having the same thought: "obviously, you can record each time
+    you drink tea by writing a timestamp on the bag". And just like that, a new
+    project to distract me from an earlier project which was a distraction from
+    an even earlier project which was a distraction from an even earlier than
+    the previously mentioned project was born.
+
+    <br />
+    <br />
+    <strong>Prompt Wrestling:</strong>
+    My first thought was to use ChatGPT or Google's AI to transcribe the data
+    for me, but I should have transcribed everything myself.
+    <br />
+    The best approach was my girlfriend's idea: take several pictures, each
+    containing a few tea bags.
+    <br />
+    Afterwards, I manually corrected lots of transcription errors the
+    <i>artificial</i> intelligence had made.
+    <br />
+    <br />
+    <strong>Data Visualization:</strong>
+    I plotted the data using Matplotlib. The plot is rendered in the browser
+    using Matplotlib via
+    <a href="https://pyscript.com/">PyScript</a>.
+    <br />
+    The angle from the origin (12:00) of each point corresponds to the time of
+    day I wrote on the tea bag. The radius/distance from the origin corresponds
+    to the date I wrote on the tea bag.
+    <br />
+    If you'd like to see the Python code looks,
+    <a
+      href="https://github.com/sedwardsmarsh/sedwardsmarsh.github.io/blob/main/tea%20bags.py"
+      >see it here</a
+    >.
+    <br />
+    <br />
+    See the plot here:
+    <br />
+    <div id="tbplot"></div>
+    <script type="py" src="../tea bags.py" config="../pyconfig.toml"></script>
+    <br />
+    <strong>Conclusion:</strong>
+    In conclusion, it appears as if I drink tea at different times throughout
+    the work day, but almost never between 7-8AM, and 6-7PM, even though I
+    sometimes work during these hours.
+  </body>
+</html>
