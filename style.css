@@ -1,117 +1,117 @@
 :root {
-    --main-text: #e34a08;
-    --body-bg-color: #ffdac8;
-    --link-and-footer: #ff9568;
-    --blockquote-color: #ff7134;
-    /* --blockquote-bg-color: #ffd3bd; */
+  --main-text: #e34a08;
+  --body-bg-color: #ffdac8;
+  --link-and-footer: #ff9568;
+  --blockquote-color: #ff7134;
+  /* --blockquote-bg-color: #ffd3bd; */
 }
 
 sam {
-    color: var(--main-text);
+  color: var(--main-text);
 }
 
 edwards {
-    color: var(--link-and-footer);
+  color: var(--link-and-footer);
 }
 
 marsh {
-    color: #ffac88;
+  color: #ffac88;
 }
 
 @media (max-width: 700px) {
-    body,
-    html {
-        /* disable horizontal scrolling */
-        max-width: 100%;
-        overflow-x: hidden;
-    }
+  body,
+  html {
+    /* disable horizontal scrolling */
+    max-width: 100%;
+    overflow-x: hidden;
+  }
 }
 
 body {
-    /* page width */
-    margin: 0 auto;
-    max-width: 50em;
+  /* page width */
+  margin: 0 auto;
+  max-width: 50em;
 
-    /* font */
-    font-family: "Helvetica", "Arial", sans-serif;
+  /* font */
+  font-family: "Helvetica", "Arial", sans-serif;
 
-    /* line spacing */
-    line-height: 1.5;
-    padding: 4em 1em;
+  /* line spacing */
+  line-height: 1.5;
+  padding: 4em 1em;
 
-    /* bring attention to title text  */
-    color: var(--main-text);
+  /* bring attention to title text  */
+  color: var(--main-text);
 
-    background-color: var(--body-bg-color);
+  background-color: var(--body-bg-color);
 }
 
 li {
-    /* add more spacing between list items */
-    padding: 0.1em;
-    font-size: 1.1em;
+  /* add more spacing between list items */
+  padding: 0.1em;
+  font-size: 1.1em;
 }
 
 h1 {
-    font-size: 3em;
+  font-size: 3em;
 }
 
 h2 {
-    font-size: 2em;
-    padding: 0em;
-    margin: 0em;
+  font-size: 2em;
+  padding: 0em;
+  margin: 0em;
 }
 
 @media (max-width: 700px) {
-    h2 {
-        font-size: 3em;
-    }
+  h2 {
+    font-size: 3em;
+  }
 }
 
 h1,
 h2,
 strong {
-    color: var(--strong);
+  color: var(--strong);
 }
 
 h2 {
-    /* line spacing */
-    margin-top: 1em;
-    padding-top: 1em;
+  /* line spacing */
+  /* margin-top: 1em; */
+  padding-top: 1em;
 }
 
 hr {
-    border: none;
-    height: 10px;
-    color: var(--main-text);
-    background-color: var(--main-text);
-    width: 1000%;
-    margin-left: -500%;
+  border: none;
+  height: 10px;
+  color: var(--main-text);
+  background-color: var(--main-text);
+  width: 1000%;
+  margin-left: -500%;
 }
 
 a {
-    color: var(--main-text);
+  color: var(--main-text);
 
-    text-decoration: underline;
-    -webkit-text-decoration-color: var(
-        --link-and-footer
-    ); /* safari still uses vendor prefix */
-    text-decoration-color: var(--link-and-footer);
+  text-decoration: underline;
+  -webkit-text-decoration-color: var(
+    --link-and-footer
+  ); /* safari still uses vendor prefix */
+  text-decoration-color: var(--link-and-footer);
 
-    text-decoration-thickness: 3px;
+  text-decoration-thickness: 3px;
 }
 
 img {
-    margin: auto;
-    display: block;
-    border: 2px solid var(--link-and-footer);
+  margin: auto;
+  display: block;
+  border: 2px solid var(--link-and-footer);
 }
 
 blockquote {
-    color: var(--blockquote-color);
-    /* background-color: var(--blockquote-bg-color);    */
+  color: var(--blockquote-color);
+  /* background-color: var(--blockquote-bg-color);    */
 }
 
 time,
 footer {
-    color: var(--link-and-footer);
+  color: var(--link-and-footer);
 }
